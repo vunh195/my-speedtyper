@@ -1,1 +1,1 @@
-THIS IS MY OWN SPEED TYPER WEBAPP
+# my-speedtyper
