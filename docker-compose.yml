@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    depends_on:
+      - database
+    # This only apply AFTER INIT
+    volumes:
+      - ./backend:/backend
+      - /backend/node_modules
+    ports:
+      - 3001:3001
+    command: npm run start:dev
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
